@@ -1,0 +1,24 @@
+{
+  "name": "@designtoken/cli",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "designtoken": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@designtoken/core": "workspace:*",
+    "@designtoken/dtcg-spec-2025-06-02-format": "workspace:*",
+    "@designtoken/dtcg-spec-2025-06-28-color": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
