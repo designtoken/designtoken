@@ -1,4 +1,4 @@
-import { register } from '@designtoken/core';
+import { registry } from '@designtoken/core';
 
 
-register('format', '2025-06-02')
+registry.registerSpec({id: 'format', snapshot: '2025-06-02', schema: {}})

@@ -1,0 +1,19 @@
+  {
+    "Hot pink": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [1, 0, 1],
+        "alpha": 1
+      }
+    },
+    "palette": {
+      "black": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [0, 0, 0]
+        }
+      }
+    }
+  }

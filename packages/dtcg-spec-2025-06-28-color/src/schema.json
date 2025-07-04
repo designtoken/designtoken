@@ -1,0 +1,92 @@
+{
+  "schema": {
+    "$ref": "#/components/schemas/ColorTokenFile"
+  },
+  "components": {
+    "ColorTokenFile": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Node"
+      }
+    },
+    "Node": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/ColorToken"
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/components/schemas/Node"
+          }
+        }
+      ]
+    },
+    "ColorToken": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "type": "string",
+          "const": "color"
+        },
+        "$value": {
+          "type": "object",
+          "properties": {
+            "colorSpace": {
+              "type": "string",
+              "enum": [
+                "srgb",
+                "srgb-linear",
+                "display-p3",
+                "a98-rgb",
+                "prophoto-rgb",
+                "rec-2020",
+                "xyz",
+                "lab",
+                "lch",
+                "oklab",
+                "oklch",
+                "hsl",
+                "hwb"
+              ],
+              "description": "ColorSpaceEnum"
+            },
+            "components": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string",
+                    "const": "none"
+                  }
+                ]
+              }
+            },
+            "alpha": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "hex": {
+              "type": "string",
+              "pattern": "^#(?:[0-9a-f]{6}|[0-9a-f]{8})$"
+            }
+          },
+          "required": [
+            "colorSpace",
+            "components"
+          ]
+        },
+        "$description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "$value"
+      ]
+    }
+  }
+}

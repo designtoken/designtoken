@@ -6,13 +6,22 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "vitest run --reporter verbose",
+    "prebuild": "tsx scripts/generate_dtcg_schema.ts"
   },
   "dependencies": {
-    "@designtoken/core": "workspace:*"
+    "@designtoken/core": "workspace:*",
+    "json-source-map": "^0.6.1",
+    "zod-openapi": "^4.2.4"
   },
   "devDependencies": {
+    "@types/json-source-map": "^0.6.0",
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "tsx": "^4.20.3",
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.4",
+    "zod": "^3.25.67",
+    "zod-to-json-schema": "^3.24.6"
   }
 }
